@@ -53,7 +53,6 @@ public class BubbleSort {
 				index1 = index2;
 				index2++;
 			}
-			
 		}
 	}
 
