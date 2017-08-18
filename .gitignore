@@ -9,6 +9,8 @@
 *.log
 *.ini
 *.properties
+*.project
+*.settings
 
 # Exclude
 !.java
