@@ -1,6 +1,14 @@
-# EVERYTHING!!!
-*
+# IDE files
+*.classpath
+*.resources
+*.dat
+*.class
+*.xml
+*.xmi
+*.lock
+*.log
+*.ini
+*.properties
 
 # Exclude
 !.java
-!*/*/
