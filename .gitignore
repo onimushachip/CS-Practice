@@ -12,6 +12,7 @@
 *.project
 *.settings
 *.metadata
+*.gitignore
 
 # Exclude
 !.java
