@@ -6,15 +6,8 @@ public class Tester {
 		int test = 256;
 //		int test2 = 4;
 		int test2 = 121;
-//		int stringLength = logBase2(test, 2);
-//		String binaryString = Integer.toBinaryString(test);
-//		binaryString = binaryString.substring(binaryString.length() - stringLength - 2);
-//		System.out.println(stringLength);
-//		System.out.println(binaryString);
 		HammingDistance ob = new HammingDistance();
 		HammingDistanceBitwise ob2 = new HammingDistanceBitwise();
-//		System.out.println(ob.hammingDistance(test, test2));
-//		System.out.println(test ^ test2);
 		System.out.println(ob2.hammingDistance(test, test2));
 		
 
