@@ -1,8 +1,8 @@
 
 public class KeyboardRowCheck {
-	String row1 = "qwertyuiop";
-	String row2 = "asdfghjkl";
-	String row3 = "zxcvbnm";
+	String row1 = "QWERTYUIOPqwertyuiop";
+	String row2 = "ASDFGHJKLasdfghjkl";
+	String row3 = "ZXCVBNMzxcvbnm";
 	String[] result = new String[0];
 	
     public String[] findWords(String[] words) {
