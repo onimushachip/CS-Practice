@@ -9,18 +9,16 @@ public class KeyboardRowCheck {
 //        String[] result = new String[0];
         
         for (int i = 0; i < words.length; i++) {
-        	System.out.println(words[i]);
+//        	System.out.println(result.length);
+//        	System.out.println(words[i]);
         	if (checkStringInRow(words[i], row1)) {
-        		result = new String[result.length + 1];
-        		result[result.length - 1] = words[i];
+        		addWord(words[i]);
         	}
         	else if (checkStringInRow(words[i], row2)) {
-        		result = new String[result.length + 1];
-        		result[result.length - 1] = words[i];
+        		addWord(words[i]);
         	}
         	else if (checkStringInRow(words[i], row3)) {
-        		result = new String[result.length + 1];
-        		result[result.length - 1] = words[i];
+        		addWord(words[i]);
         	}
         }
         
@@ -28,13 +26,16 @@ public class KeyboardRowCheck {
     }
     
     private void addWord(String input) {
+//    	System.out.println(input);
     	if (result.length == 0) {
     		result = new String[1];
     		result[0] = input;
     	}
     	else {
-    		result = new String[result.length + 1];
-    		result[result.length - 1] = input;
+    		String[] newResult = new String[result.length + 1];
+    		System.arraycopy(result, 0, newResult, 0, result.length);
+    		newResult[newResult.length - 1] = input;
+    		result = newResult;
     	}
     }
     
@@ -50,7 +51,7 @@ public class KeyboardRowCheck {
 	public boolean checkCharacterInRow(char inputChar, String inputRow) {
 		String input = "";
 		input += inputChar;
-		System.out.println(input);
+//		System.out.println(input);
 		if (!inputRow.contains(input)) {
 			return false;
 		}
