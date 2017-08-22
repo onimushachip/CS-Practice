@@ -7,6 +7,8 @@ public class Tester {
 		int[] test = {1, 2, 2, 2, 2, 2};
 		DistributeCandy ob = new DistributeCandy();
 		int result = ob.distributeCandies(test);
+		int resultSet = ob.distributeCandiesSet(test);
+		System.out.println(result);
 		System.out.println(result);
 	}
 

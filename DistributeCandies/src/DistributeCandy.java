@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 /*
  * Given an integer array with even length, where different numbers in this array represent different kinds of candies. 
@@ -49,6 +51,23 @@ public class DistributeCandy {
     		}
     	}
     	return false;
+    }
+    
+    //Using Set
+    public int distributeCandiesSet(int[] candies) {
+    	int totalCandies = candies.length;
+    	Set<Integer> candyTypes = new HashSet<Integer>();
+    	
+    	for (int i = 0; i < candies.length; i++) {
+    		candyTypes.add(candies[i]);
+    	}
+    	if (candyTypes.size() > totalCandies / 2) {
+    		return (totalCandies / 2);
+    	}
+    	else {
+    		return candyTypes.size();
+    	}
+    	
     }
 
 }
