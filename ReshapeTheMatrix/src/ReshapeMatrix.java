@@ -32,14 +32,6 @@ public class ReshapeMatrix {
     	return result;
     }
     
-//    public int getElement(int[][] matrix, int row, int col) {
-//    	return matrix[row][col];
-//    }
-    
-//    public void traverseMatrix(int[][] matrix) {
-//    	int row = matrix.length;
-//    	int col = matrix[0].length;
-//    }
     
     private void addElement(int input) {
     	if (resultCol >= result[0].length) {

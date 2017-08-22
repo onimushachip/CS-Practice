@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 
-public class Testser {
+public class Tester {
 
 	public static void main(String[] args) {
 		int[][] test = new int[2][2];
@@ -13,7 +13,7 @@ public class Testser {
 //		System.out.println(totalElements);
 //		System.out.println(Arrays.toString(test));
 		ReshapeMatrix ob = new ReshapeMatrix();
-		int[][] result = ob.matrixReshape(test, 2, 4);
+		int[][] result = ob.matrixReshape(test, 1, 4);
 	}
 
 }
