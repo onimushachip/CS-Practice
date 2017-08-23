@@ -7,7 +7,7 @@ public class Tester {
 		int[] test1 = {4, 1, 2};
 		int[] test2 = {1, 3, 4, 2};
 		NextGreaterElement ob = new NextGreaterElement();
-		int[] result = ob.nextGreaterElement(test1, test2);
+		int[] result = ob.nextGreaterElementHashmap(test1, test2);
 		System.out.println(Arrays.toString(result));
 
 	}
