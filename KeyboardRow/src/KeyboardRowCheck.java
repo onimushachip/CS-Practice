@@ -1,3 +1,9 @@
+/*
+ * Given a List of words, return the words that can be typed using letters of alphabet on only one row's of 
+ * American keyboard like qwerty.
+ * 
+ */
+
 
 public class KeyboardRowCheck {
 	String row1 = "QWERTYUIOPqwertyuiop";
@@ -6,8 +12,6 @@ public class KeyboardRowCheck {
 	String[] result = new String[0];
 	
     public String[] findWords(String[] words) {
-//        String[] result = new String[0];
-        
         for (int i = 0; i < words.length; i++) {
 //        	System.out.println(result.length);
 //        	System.out.println(words[i]);
