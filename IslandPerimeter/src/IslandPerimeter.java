@@ -22,11 +22,7 @@ public class IslandPerimeter {
 	    	this.inputGrid = grid;
 	    	
 	    	findStartTile();
-//	    	System.out.println(landX + " " + landY);
-//	    	System.out.println(gridRow + " " + gridCol);
 	    	findPerimeter(landX, landY);
-	    	
-
 	        
 	    	return result;
 	    }
@@ -45,9 +41,6 @@ public class IslandPerimeter {
 	    }
 	    
 	    private void findPerimeter(int y, int x) {
-//	    	if (startX < 0 || startY < 0 || startX > gridRow || startY > gridCol) {
-//	    		return;
-//	    	}
 	    	inputGrid[y][x] = 2;
 	    	
 	    	if (x - 1 >= 0) {
