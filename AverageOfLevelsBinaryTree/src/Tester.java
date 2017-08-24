@@ -19,9 +19,10 @@ public class Tester {
 		
 		AverageLevel ob = new AverageLevel();
 		List<Double> result = ob.averageOfLevels(node3);
-		double test = (double)5 / (double)2;
-		System.out.println(test);
+//		double test = (double)5 / (double)2;
+//		System.out.println(test);
 		System.out.println(Arrays.asList(result));
+		System.out.println(Arrays.asList(ob.averageOfLevelsQueue(node3)));
 	}
 
 }
