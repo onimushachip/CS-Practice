@@ -4,6 +4,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/*
+ * Given a non-empty binary tree, return the average value of the nodes on each level in the form of an array.
+ * 
+ */
+
 
 public class AverageLevel {
 	private List<Double> result = new ArrayList<Double>();
@@ -11,11 +16,7 @@ public class AverageLevel {
 	private Map<Integer, Integer> numberOfMembers = new HashMap<Integer, Integer>();
 	
     public List<Double> averageOfLevels(TreeNode root) {
-    	
     	traverseTree(root, -1);
-    	
-//    	System.out.println(Arrays.asList(levelSums));
-//    	System.out.println(Arrays.asList(numberOfMembers));
     	
     	for (int i = 0; i < levelSums.size(); i++) {
     		double levelAverage;
@@ -23,23 +24,15 @@ public class AverageLevel {
     		result.add(levelAverage);
     	}
     	
-//    	System.out.println(Arrays.asList(result));
-    	
     	return result;
     }
     
     private void traverseTree(TreeNode node, int level) {
     	level++;
-//    	System.out.println(node.val);
-//    	System.out.println(node.left);
-//    	System.out.println(node.right);
     	if (!levelSums.containsKey(level)) {
     		levelSums.put(level, (double) node.val);
     	}
     	else {
-//    		System.out.println("level sum: " + levelSums.get(levelSums));
-//    		System.out.println(levelSums.containsKey(level));
-//    		System.out.println(Arrays.asList(levelSums));
     		
     		double newSum = levelSums.get(level) + node.val;
     		levelSums.put(level, newSum);
