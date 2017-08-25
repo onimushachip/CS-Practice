@@ -11,7 +11,6 @@ import java.util.Queue;
  * 
  */
 
-
 public class AverageLevel {
 	private List<Double> result = new ArrayList<Double>();
 	private Map<Integer, Double> levelSums = new HashMap<Integer, Double>();
@@ -35,7 +34,6 @@ public class AverageLevel {
     		levelSums.put(level, (double) node.val);
     	}
     	else {
-    		
     		double newSum = levelSums.get(level) + node.val;
     		levelSums.put(level, newSum);
     	}

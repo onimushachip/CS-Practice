@@ -25,7 +25,7 @@ public class MaxConsecutiveOnes {
     		}
     		index++;
     	}
-        
+    
     	return maxConsecutive;
     }
 
