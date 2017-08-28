@@ -27,8 +27,6 @@ public class FindDisappearedNumbers {
     		}
     	}
     	
-
-    	
     	for (int i = 1; i <= nums.length; i++) {
     		if (!occurence.containsKey(i)) {
     			result.add(i);
@@ -37,6 +35,28 @@ public class FindDisappearedNumbers {
     	
 //    	System.out.println(Arrays.asList(result));
         
+    	return result;
+    }
+    
+    
+    //Using the index of elements to find the disappeared numbers
+    public List<Integer> findDisappearedNumbersLinear(int[] nums) {
+    	for (int i = 0; i < nums.length; i++) {
+    		//Mark numbers appearing in index by negating them
+    		int index = Math.abs(nums[i]) - 1;
+    		if (nums[index] > 0) {
+    			nums[index] = -nums[index];
+    		}
+    	}
+    	
+    	for (int i = 0; i < nums.length; i++) {
+//    		System.out.println(nums[i])
+    		if (nums[i] > 0) {
+    			result.add(i + 1);
+    		}
+    	}
+    	System.out.println(Arrays.toString(nums));
+    	System.out.println(Arrays.asList(result));
     	return result;
     }
 }
