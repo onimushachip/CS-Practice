@@ -3,7 +3,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /*
  * Given an array of integers where 1 <= a[i] <= n (n = size of array), some elements appear twice and others appear once.
@@ -26,17 +25,9 @@ public class FindDisappearedNumbers {
     		else {
     			occurence.put(nums[i], 1);
     		}
-//    		System.out.println(Arrays.asList(occurence));
     	}
     	
-//    	Set<Integer> keySet = occurence.keySet();
-//    	Object[] keySet = occurence.keySet().toArray();
-//    	for (int i = 0; i < keySet.size(); i++) {
-//    		System.out.println(keySet.)
-//    	}
-//    	for (Integer key : keySet) {
-//    		System.out.println(key);
-//    	}
+
     	
     	for (int i = 1; i <= nums.length; i++) {
     		if (!occurence.containsKey(i)) {
