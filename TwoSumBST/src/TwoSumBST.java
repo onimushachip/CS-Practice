@@ -18,7 +18,7 @@ public class TwoSumBST {
     		for (int i = 0; i < nodeList.size(); i++) {
     			sum = processValue + nodeList.get(i).val;
     			if (sum == k) {
-    				System.out.println(true);
+//    				System.out.println(true);
     				return true;
     			}
     		}

@@ -15,7 +15,9 @@ public class Tester {
 		node3.right = node4;
 		node6.right = node7;
 		TwoSumBST ob = new TwoSumBST();
-		ob.findTarget(node5, 9);
+		System.out.println(ob.findTarget(node5, 9));
+		TwoSumBSTImproved ob2 = new TwoSumBSTImproved();
+		System.out.println(ob.findTarget(node5, 9));
 	}
 
 }
