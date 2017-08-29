@@ -2,9 +2,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.w3c.dom.NodeList;
-
-
 public class TwoSumBSTImproved {
 	private Map<Integer, Integer> nodeValueList = new HashMap<Integer, Integer>();
 	private int checkValue = 0;
@@ -12,8 +9,6 @@ public class TwoSumBSTImproved {
     public boolean findTarget(TreeNode root, int k) {
     	checkValue = k;
     	traverseTree(root);
-    	
-//    	for (int i = 0; i <)
     	
     	return result;
     }
