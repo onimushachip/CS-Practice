@@ -22,8 +22,15 @@ public class DigitalRoot {
     	}
     	result = Integer.parseInt(digit);
     	
+    	return result;
+    }
+    
+    public int digitalRoot(int num) {
+    	int result = 0;
     	
+    	result = (int) (num - 9 * Math.floor((num - 1) / 9));
     	
+    	System.out.println(result);
     	return result;
     }
 }
