@@ -1,8 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Queue;
 
 /*
  * Given a Binary Search Tree and a target number, 
@@ -19,7 +15,6 @@ public class TwoSumBST {
     		int processValue = nodeList.get(0).val;
     		int sum = 0;
     		nodeList.remove(0);
-//    		Iterator nodeListIterator = nodeList.iterator();
     		for (int i = 0; i < nodeList.size(); i++) {
     			sum = processValue + nodeList.get(i).val;
     			if (sum == k) {
@@ -28,9 +23,6 @@ public class TwoSumBST {
     			}
     		}
     	}
-    	
-//    	System.out.println(Arrays.asList(nodeList));
-        
     	return false;
     }
     
