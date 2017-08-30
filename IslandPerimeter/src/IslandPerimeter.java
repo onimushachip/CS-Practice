@@ -11,7 +11,7 @@
 public class IslandPerimeter {
 		private int[][] inputGrid;
 		private int gridRow = 0;
-		private int gridCol = 0;S
+		private int gridCol = 0;
 		int landX = 0;
 		int landY = 0;
 		int result = 0;
