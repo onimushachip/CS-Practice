@@ -8,9 +8,9 @@
  */
 
 public class ReshapeMatrix {
-	int[][] result = null;
-	int resultRow = 0;
-	int resultCol = 0;
+	private int[][] result = null;
+	private int resultRow = 0;
+	private int resultCol = 0;
 	
     public int[][] matrixReshape(int[][] nums, int r, int c) {
         int totalElements = nums.length * nums[0].length;
