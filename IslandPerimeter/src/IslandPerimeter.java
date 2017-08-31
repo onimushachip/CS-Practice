@@ -12,9 +12,9 @@ public class IslandPerimeter {
 		private int[][] inputGrid;
 		private int gridRow = 0;
 		private int gridCol = 0;
-		int landX = 0;
-		int landY = 0;
-		int result = 0;
+		private int landX = 0;
+		private int landY = 0;
+		private int result = 0;
 	
 	    public int islandPerimeter(int[][] grid) {
 	    	this.gridRow = grid.length;
