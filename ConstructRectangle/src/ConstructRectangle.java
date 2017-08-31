@@ -8,12 +8,16 @@
 public class ConstructRectangle {
     public int[] constructRectangle(int area) {
     	int length = area;
-    	int width = 0;
+    	int width = 1;
     	int[] result = new int[2];
+        
+        if (area == 1) {
+            return new int[]{1, 1};
+        }
     	
     	while (true) {
-    		if (area % length == 0) {
-    			width = area / length;
+    		if (area % width == 0) {
+    			length = area / width;
     			if (width <= length) {
     				result[0] = length;
         			result[1] = width;
@@ -22,7 +26,7 @@ public class ConstructRectangle {
     				break;
     			}
     		}
-    		length--;
+    		width++;
     	}
         return result;
     }
