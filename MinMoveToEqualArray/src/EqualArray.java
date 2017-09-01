@@ -6,7 +6,6 @@ import java.util.Arrays;
  * 
  */
 
-
 public class EqualArray {
 	public int minMoves(int[] nums) {
 		if (nums.length == 1) {
