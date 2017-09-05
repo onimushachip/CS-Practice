@@ -3,9 +3,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 /*
- * Given a binary search tree with non-negative values, find the minimum absolute difference between values of any two nodes.
+ * Given a binary search tree with non-negative values, find the minimum absolute difference 
+ * between values of any two nodes.
  * 
  */
+
 public class MinimumDifferenceBST {
     public int getMinimumDifference(TreeNode root) {
     	int result = Integer.MAX_VALUE;
@@ -18,7 +20,6 @@ public class MinimumDifferenceBST {
     	}
     	
     	traverseTree(root, setValue);
-    	System.out.println(setValue.size());
     	
     	if (setValue.size() == 1) {
     		return 0;
