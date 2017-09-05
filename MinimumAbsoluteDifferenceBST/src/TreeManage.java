@@ -1,5 +1,6 @@
 
 public class TreeManage {
+	private int previousValue = 999999;
 	public void addNode(TreeNode tree, TreeNode newNode) {
 		if (tree == null || newNode == null) {
 			return;
@@ -37,7 +38,8 @@ public class TreeManage {
 			printTree(tree.left);
 		}
 		
-		System.out.println(tree.val);
+		System.out.println(tree.val + " " + this.previousValue);
+		this.previousValue = tree.val;
 		
 		if (tree.right != null) {
 			printTree(tree.right);
