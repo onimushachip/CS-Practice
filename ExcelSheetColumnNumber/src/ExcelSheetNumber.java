@@ -10,13 +10,7 @@ public class ExcelSheetNumber {
     	if (s.length() == 1) {
     		result += s.codePointAt(0) - 64;
     		return result;
-    	}
-    	
-//    	for (int i = 0; i < s.length(); i++) {
-//    		result += 26 * i;
-//    	}
-//    	
-//    	result += s.codePointAt(s.length() - 1) - 64;
+    	}	
     	
     	for (int i = s.length() - 2; i >=0; i--) {
     		int power = (int)Math.pow(26, s.length() - 1 - i);
