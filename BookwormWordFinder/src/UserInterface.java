@@ -21,7 +21,9 @@ public class UserInterface {
 		//Display panel
 		JPanel displayPanel = new JPanel();
 		JLabel displayLabel = new JLabel("Result");
-		JTextArea displayField = new JTextArea(10, 30);
+		final JTextArea displayField = new JTextArea(10, 30);
+		
+		displayField.setFont(displayField.getFont().deriveFont(20.0f));
 		
 		displayPanel.add(displayLabel, BorderLayout.NORTH);
 		displayPanel.add(displayField, BorderLayout.SOUTH);
@@ -30,6 +32,8 @@ public class UserInterface {
 		JPanel inputPanel = new JPanel();
 		JLabel inputLabel = new JLabel("Input Letters");
 		final JTextArea inputField = new JTextArea(1, 30);
+		
+		inputField.setFont(inputField.getFont().deriveFont(18.0f));
 		
 		inputPanel.add(inputLabel, BorderLayout.NORTH);
 		inputPanel.add(inputField, BorderLayout.SOUTH);
@@ -43,14 +47,27 @@ public class UserInterface {
 			public void actionPerformed(ActionEvent e) {
 				String inputLetters = inputField.getText();
 //				System.out.println(inputField.getText());
+				displayField.setText("");
 				core.getInput(inputLetters);
 				core.findWords();
-				System.out.println("Done");
-				core.printResult();
+//				System.out.println("Done");
+//				core.printResult();
+				int listSize = core.getResultListSize();
+				for (int i = 0; i < listSize; i++) {
+					String currentContent = displayField.getText();
+					currentContent += core.getResultWord() + "\n";
+					displayField.setText(currentContent);
+				}
 			}
 		});
 		
 		JButton clearButton = new JButton("Clear");
+		clearButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				inputField.setText("");
+				displayField.setText("");
+			}
+		});
 		
 		buttonPanel.add(findButton);
 		buttonPanel.add(clearButton);
@@ -60,7 +77,7 @@ public class UserInterface {
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		mainFrame.pack();
 		mainFrame.setVisible(true);
-		mainFrame.setSize(600, 300);
+		mainFrame.setSize(600, 400);
 		mainFrame.add(buttonPanel, BorderLayout.SOUTH);
 		mainFrame.add(displayPanel, BorderLayout.CENTER);
 		mainFrame.add(inputPanel, BorderLayout.NORTH);
