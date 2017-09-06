@@ -4,8 +4,7 @@ import java.util.Set;
 
 /*
  * Given a binary search tree with non-negative values, find the minimum absolute difference 
- * between values of any two nodes.
- * 
+ * between vals of any two nodes.
  */
 
 public class MinimumDifferenceBST {
