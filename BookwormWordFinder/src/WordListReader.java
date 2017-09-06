@@ -24,7 +24,7 @@ public class WordListReader {
 			
 			line = bufferedReader.readLine();
 			while (line != null) {
-//				System.out.println(line);
+				line =  line.toLowerCase();
 				WordList.addWord(line); //Store the word in WordList
 				line = bufferedReader.readLine();
 			}
