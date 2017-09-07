@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
@@ -19,9 +18,17 @@ public class WordFinder {
 	private int maxLength = 0;
 	
 	public void getInput(String input) {
-		letterOccurrence = new HashMap<Integer, Integer>();
-		maxLength = 0;
+		clearData();
 		this.inputLetters = input;
+	}
+	
+	public void clearData() {
+		this.inputLetters = null;
+		this.letterOccurrence = new HashMap<Integer, Integer>();
+		this.lOTemp = new HashMap<Integer, Integer>();
+		this.resultList = new LinkedList<String>();
+		this.resultListReversed = new Stack<String>();
+		this.maxLength = 0;
 	}
 	
 	public void buildLetterOccurrence() {

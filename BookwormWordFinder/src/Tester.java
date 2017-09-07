@@ -3,9 +3,8 @@
 public abstract class Tester {
 
 	public static void main(String[] args) {
-		String fileName = args[0];
+		String fileName = "data.txt";
 		WordListReader listReader = new WordListReader(fileName);
-		WordFinder wordFinder = new WordFinder();
 		
 		listReader.importList();
 //		

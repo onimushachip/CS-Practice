@@ -63,9 +63,10 @@ public class UserInterface {
 		
 		JButton clearButton = new JButton("Clear");
 		clearButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e){
 				inputField.setText("");
 				displayField.setText("");
+				core.clearData();
 			}
 		});
 		
@@ -78,6 +79,7 @@ public class UserInterface {
 		mainFrame.pack();
 		mainFrame.setVisible(true);
 		mainFrame.setSize(600, 400);
+		mainFrame.setTitle("Bookworm Word Finder");
 		mainFrame.add(buttonPanel, BorderLayout.SOUTH);
 		mainFrame.add(displayPanel, BorderLayout.CENTER);
 		mainFrame.add(inputPanel, BorderLayout.NORTH);
