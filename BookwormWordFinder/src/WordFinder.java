@@ -41,8 +41,6 @@ public class WordFinder {
 				letterOccurrence.put(letterKey, 1);
 			}
 		}
-		
-//		System.out.println(Arrays.asList(this.letterOccurrence));
 	}
 	
 	public void findWords() {
@@ -50,7 +48,6 @@ public class WordFinder {
 		buildLetterOccurrence();
 		int wordListSize = WordList.getWordListSize();
 		for (int i = 0; i < wordListSize; i++) {
-//			System.out.println(WordList.getWord(i));
 			String validWord = WordList.getWord(i);
 			lOTemp = new HashMap<Integer, Integer>(letterOccurrence); //Create a temp copy of input letters
 			if (checkWord(i, validWord) && validWord.length() >= maxLength) {
@@ -96,7 +93,6 @@ public class WordFinder {
 		for (int i = 0; i < qSize; i++) {
 			System.out.println(resultList.poll());
 		}
-//		System.out.println(Arrays.asList(resultList));
 	}
 	
 	

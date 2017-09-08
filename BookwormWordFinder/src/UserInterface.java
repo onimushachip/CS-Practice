@@ -46,12 +46,9 @@ public class UserInterface {
 		findButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String inputLetters = inputField.getText();
-//				System.out.println(inputField.getText());
 				displayField.setText("");
 				core.getInput(inputLetters);
 				core.findWords();
-//				System.out.println("Done");
-//				core.printResult();
 				int listSize = core.getResultListSize();
 				for (int i = 0; i < listSize; i++) {
 					String currentContent = displayField.getText();
