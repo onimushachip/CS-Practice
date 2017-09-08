@@ -50,7 +50,7 @@ public class WordFinder {
 		for (int i = 0; i < wordListSize; i++) {
 			String validWord = WordList.getWord(i);
 			lOTemp = new HashMap<Integer, Integer>(letterOccurrence); //Create a temp copy of input letters
-			if (checkWord(i, validWord) && validWord.length() >= maxLength) {
+			if (checkWord(validWord) && validWord.length() >= maxLength) {
 				maxLength = validWord.length();
 				resultList.add(WordList.getWord(i));
 			}
@@ -64,7 +64,7 @@ public class WordFinder {
 		}
 	}
 	
-	public boolean checkWord(int index, String validWord) {
+	public boolean checkWord(String validWord) {
 		for (int j = 0; j < validWord.length(); j++) {
 			int charKey = validWord.codePointAt(j);
 			if (lOTemp.containsKey(charKey)) {

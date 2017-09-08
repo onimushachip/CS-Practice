@@ -4,7 +4,6 @@
  * 
  */
 
-
 public class KeyboardRowCheck {
 	String row1 = "QWERTYUIOPqwertyuiop";
 	String row2 = "ASDFGHJKLasdfghjkl";
@@ -13,8 +12,6 @@ public class KeyboardRowCheck {
 	
     public String[] findWords(String[] words) {
         for (int i = 0; i < words.length; i++) {
-//        	System.out.println(result.length);
-//        	System.out.println(words[i]);
         	if (checkStringInRow(words[i], row1)) {
         		addWord(words[i]);
         	}
@@ -30,7 +27,6 @@ public class KeyboardRowCheck {
     }
     
     private void addWord(String input) {
-//    	System.out.println(input);
     	if (result.length == 0) {
     		result = new String[1];
     		result[0] = input;
@@ -49,13 +45,13 @@ public class KeyboardRowCheck {
     			return false;
     		}
     	}
+    	
     	return true;
     }
 	
 	public boolean checkCharacterInRow(char inputChar, String inputRow) {
 		String input = "";
 		input += inputChar;
-//		System.out.println(input);
 		if (!inputRow.contains(input)) {
 			return false;
 		}

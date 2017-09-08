@@ -45,7 +45,6 @@ public class MinimumDifferenceBST {
     }
     
     private void traverseTree(TreeNode root, Set<Integer> set) {
-//    	throw Exception("PRogram suck!")
     	set.add(root.val);
     	
     	if (root.left != null) {
