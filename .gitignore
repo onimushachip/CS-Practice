@@ -15,6 +15,7 @@
 *.gitignore
 *.recommenders
 *.txt
+*.jar
 
 # Exclude
 !.java
