@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -8,7 +7,6 @@ import java.util.Set;
  */
 public class FirstUniqueCharacter {
     public int firstUniqChar(String s) {
-//    	boolean unique = false;
     	Set<Integer> apprearedChar = new HashSet<Integer>();
     	Set<Integer> repeatedChar = new HashSet<Integer>();
     	
@@ -16,7 +14,6 @@ public class FirstUniqueCharacter {
     		return 0;
     	}
        	
-//    	candidate = s.codePointAt(0);
     	for (int i = 0; i < s.length(); i++) {
     		if (!apprearedChar.contains(s.codePointAt(i))) {
     			apprearedChar.add(s.codePointAt(i));
