@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -33,20 +32,16 @@ public class MinIndexSum {
     		if (indexList.containsKey(list2[i])) {
     			if ((i + indexList.get(list2[i]) == minSum)) {
     				resultQueue.add(list2[i]);
-    				System.out.println(list2[i]);
     			}
     		}
     	}
     	
     	result = new String[resultQueue.size()];
-    	System.out.println(Arrays.asList(resultQueue));
     	
     	for (int i = 0; i < result.length; i++) {
-//    		System.out.println(resultQueue.peek());
     		result[i] = resultQueue.poll();
     	}
     	
-    	System.out.println(Arrays.toString(result));
     	
     	return result;
     }
