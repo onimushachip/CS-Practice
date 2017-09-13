@@ -38,7 +38,6 @@ public class ReshapeMatrix {
     		resultCol = 0;
     		resultRow++;
     	}
-//    	System.out.println(resultRow + " " + resultCol);
     	result[resultRow][resultCol] = input;
     	resultCol++;
     }

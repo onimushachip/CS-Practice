@@ -11,8 +11,6 @@ public class SingleNumber {
     	Arrays.sort(nums);
     	int index = 0;
     	
-//    	System.out.println(Arrays.toString(nums));
-    	
     	while (index < nums.length - 1) {
     		if (nums[index] != nums[index + 1]) {
     			return nums[index];
