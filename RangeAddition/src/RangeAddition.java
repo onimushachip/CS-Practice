@@ -16,17 +16,12 @@ public class RangeAddition {
     	Map<String, Integer> matrix = new HashMap<String, Integer>();
     	
     	matrix = initialize(m, n);
-//    	for (String element : matrix.keySet()) {
-//    		System.out.println(element + " " + matrix.get(element));
-//    	}
     	
     	for (int opsSize = 0; opsSize < ops.length; opsSize ++) {
     		String coordinate = "";
-//    		System.out.println("");
     		for (int i = 0; i < ops[opsSize][0]; i++) { //row
     			for (int j = 0; j < ops[opsSize][1]; j++) { //column
     				coordinate = Integer.toString(i + 1) + Integer.toString(j + 1);
-//    				System.out.println(coordinate);
     				matrix.put(coordinate, matrix.get(coordinate) + 1);
     			}
     		}
@@ -38,7 +33,6 @@ public class RangeAddition {
     		}
     	}
     	 	
-//    	System.out.println(result);
         return result;
     }
     
