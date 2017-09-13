@@ -11,7 +11,6 @@ import java.util.Arrays;
 
 
 public class MoveZero {
-	
     public void moveZeroes(int[] nums) {
         int zeroSlot = nums.length - 1;
         int zeroFinder = 0;
@@ -20,7 +19,6 @@ public class MoveZero {
         	if (nums[i] == 0) {
         		zeroFinder = i;
         		while (zeroFinder != zeroSlot) {
-//        			System.out.println(zeroFinder + " " + zeroSlot);
         			if (nums[zeroFinder + 1] != 0) {
         				//swap
         				nums[zeroFinder] = nums[zeroFinder + 1];
@@ -31,7 +29,6 @@ public class MoveZero {
         		zeroSlot--;
         	}
         }
-//        System.out.println(Arrays.toString(nums));
     }
 	
 	
@@ -42,7 +39,6 @@ public class MoveZero {
     	int resultIndexHead = 0;
     	
     	for (int i = 0; i < nums.length; i++) {
-//    		System.out.println(nums[i]);
     		if (nums[i] != 0) {
     			result[resultIndexHead] = nums[i];
     			resultIndexHead++;
@@ -53,8 +49,6 @@ public class MoveZero {
     		}
     	}
     	
-//    	System.out.println(Arrays.toString(nums));
-//    	System.out.println(Arrays.toString(result));
         nums = result;
     }
 
