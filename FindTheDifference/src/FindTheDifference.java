@@ -40,13 +40,6 @@ public class FindTheDifference {
     		result = key.charAt(0);
     	}
     	
-//    	System.out.println(Arrays.asList(occurence));
-    	
-//    	Arrays.sort(sArray);
-//    	Arrays.sort(tArray);
-    	
-//    	result = tArray[tArray.length - 1];
-     
     	return result;
     }
 }
