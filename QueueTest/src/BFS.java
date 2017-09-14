@@ -6,18 +6,6 @@ import java.util.Queue;
 public class BFS {
 
 	public static void main(String[] args) {
-//		Queue<Integer> testQ = new LinkedList<>();
-//		int[] inputArray = {1, 2, 3, 4, 5};
-//		for (int i = inputArray.length - 1; i >= 0; i--) {
-//			testQ.add(inputArray[i]);
-//		}
-//		
-//		System.out.println(Arrays.toString(inputArray));
-//		
-//		while (!testQ.isEmpty()) {
-//			System.out.print(testQ.poll() + " ");
-//		}
-		
 		TreeNode node1 = new TreeNode(1);
 		TreeNode node3 = new TreeNode(3);
 		TreeNode node2 = new TreeNode(2);
@@ -26,8 +14,6 @@ public class BFS {
 		node1.setLeftNode(node3);
 		node1.setRightNode(node2);
 		node3.setLeftNode(node5);
-		
-//		System.out.println(node5.getLeftNode());
 		
 		//Start the BFS traverse function here
 		
