@@ -29,8 +29,6 @@ public class Heap {
 		System.out.println("Result");
 		
 		for (int i = 0; i < heapArray.length; i++) {
-//			heapArray[i].setIndex(i);
-//			heapArray[i].printElement();
 			int newIndex = heapArray[i].getIndex();
 			processedArray[newIndex] = heapArray[i];
 		}
@@ -40,7 +38,6 @@ public class Heap {
 			if (leftChildIndex < processedArray.length - 1) {
 				processedArray[i].checkChildLeft();
 			}
-//			System.out.println(processedHeapArray[i].hasLeftChild);
 			processedArray[i].printElement();
 		}
 		
@@ -55,7 +52,6 @@ public class Heap {
 				if (leftChildIndex < processedArray.length - 1) {
 					processedArray[i].checkChildLeft();
 				}
-//				System.out.println(processedArray[i].hasLeftChild);
 				processedArray[i].printElement();
 			}
 		}
@@ -73,7 +69,6 @@ public class Heap {
 				if (leftChildIndex < processedArray.length - 1) {
 					processedArray[i].checkChildLeft();
 				}
-//				System.out.println(processedArray[i].hasLeftChild);
 				processedArray[i].printElement();
 			}
 			else {
@@ -87,7 +82,6 @@ public class Heap {
 		while (heapArray[node.getParentIndex()] != null && node.getIndex() != 0) {
 			int nodeValue = node.getValue();
 			int parentValue = heapArray[node.getParentIndex()].getValue();
-//			System.out.println(node.getIndex());
 			if (nodeValue < parentValue) {
 				swapNode(node, heapArray[node.getParentIndex()]);
 			}
@@ -108,16 +102,8 @@ public class Heap {
 	
 	public static HeapNode[] reIndex(HeapNode[] inputArray) {
 		HeapNode[] processedArray = new HeapNode[inputArray.length];
-//		System.out.println("copied");
 		for (int i = 0; i < inputArray.length - 1; i++) {
-//			System.out.println(inputArray[i]);
 			processedArray[inputArray[i].getIndex()] = new HeapNode(inputArray[i].getValue());
-//			System.out.println("copied");
-//			int leftChildIndex;
-//			leftChildIndex = processedArray[i].getIndex()*2 + 1;
-//			if (leftChildIndex < processedArray.length - 1) {
-//				processedArray[i].checkChildLeft();
-//			}
 		}
 		for (int i = 0; i < processedArray.length - 1; i++) {
 			processedArray[i].setIndex(i);
@@ -129,9 +115,6 @@ public class Heap {
 		int inputNodeValue = inputNode.getValue();
 		int inputNodeIndex = inputNode.getIndex();
 		while (heapArray[inputNodeIndex].hasLeftChild) {
-//			System.out.println("check");
-//			System.out.println(inputNodeValue);
-			
 			int leftChildValue = heapArray[inputNode.getLeftChildIndex()].getValue();
 			int rightChildValue;
 			
@@ -142,8 +125,6 @@ public class Heap {
 				rightChildValue = 999999;
 			}
 			
-//			System.out.println(leftChildValue);
-//			System.out.println(rightChildValue);
 			if (leftChildValue < rightChildValue && inputNodeValue > leftChildValue){
 				swapNode(heapArray[inputNodeIndex], heapArray[inputNode.getLeftChildIndex()]);
 			}
