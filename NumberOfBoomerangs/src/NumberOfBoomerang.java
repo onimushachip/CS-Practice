@@ -9,17 +9,13 @@ import java.util.HashMap;
 public class NumberOfBoomerang {
     public int numberOfBoomerangs(int[][] points) {
     	int counter = 0;
-//    	Set<Integer> distList = new HashSet<Integer>();
     	HashMap<Integer, Integer> distList = new HashMap<Integer, Integer>();
     	
     	for (int i = 0; i < points.length; i++) {
     		distList = new HashMap<Integer, Integer>();
     		for (int j = 0; j < points.length; j++) {
     			int distance = findDistance(points[i], points[j]);
-//    			System.out.println(distance);
     			if (distList.containsKey(distance)) {
-//    				counter++;
-//    				System.out.println(Arrays.toString(points[i]) + " " + Arrays.toString(points[j]));
     				distList.put(distance, distList.get(distance) + 1);
     				counter += distList.get(distance);
     			}
