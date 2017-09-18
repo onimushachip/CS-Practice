@@ -29,9 +29,6 @@ public class MaxProduct {
         else {
         	result = nums[nums.length - 1] * nums[nums.length - 2] * nums[nums.length - 3];
         }
-//        for (int i = nums.length - 1; i >= nums.length - 3; i--) {
-//        	result = result * nums[i];
-//        }
     	
     	return result;
     }
