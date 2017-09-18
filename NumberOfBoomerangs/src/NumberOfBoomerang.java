@@ -1,7 +1,4 @@
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
 
 /*
  * Given n points in the plane that are all pairwise distinct, a "boomerang" is a tuple of points (i, j, k) 

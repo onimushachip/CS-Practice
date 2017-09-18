@@ -24,10 +24,10 @@ public class WordFinder {
 	
 	public void clearData() {
 		this.inputLetters = null;
-		this.letterOccurrence = new HashMap<Integer, Integer>();
-		this.lOTemp = new HashMap<Integer, Integer>();
-		this.resultList = new LinkedList<String>();
-		this.resultListReversed = new Stack<String>();
+		this.letterOccurrence.clear();
+		this.lOTemp.clear();
+		this.resultList.clear();
+		this.resultListReversed.clear();
 		this.maxLength = 0;
 	}
 	
@@ -44,7 +44,7 @@ public class WordFinder {
 	}
 	
 	public void findWords() {
-		resultList = new LinkedList<String>();
+		resultList.clear();
 		buildLetterOccurrence();
 		int wordListSize = WordList.getWordListSize();
 		for (int i = 0; i < wordListSize; i++) {
