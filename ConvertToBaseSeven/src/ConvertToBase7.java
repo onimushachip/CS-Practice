@@ -13,9 +13,8 @@ public class ConvertToBase7 {
     	
     	String remainder = Integer.toString(num % 7);
     	
-//    	System.out.println(remainder);
     	String result = convertToBase7(num / 7) + remainder;
-//    	System.out.println(result);
+    	
     	return result;
     }
 
