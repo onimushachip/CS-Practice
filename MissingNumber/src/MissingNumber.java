@@ -16,7 +16,6 @@ public class MissingNumber {
         Arrays.sort(nums);
         
         while (left < right) {
-//        	System.out.println("check");
         	mid = (left + right) / 2;
         	
         	if (nums[mid] > mid) { //Missing number is in the left
@@ -34,15 +33,6 @@ public class MissingNumber {
     
     public int missingNumberLinear(int[] nums) { 	
     	Arrays.sort(nums);
-    	
-//    	if (nums.length == 1) {
-//    		if (nums[0] == 1) {
-//    			return 0;
-//    		}
-//    		else {
-//    			return 1;
-//    		}
-//    	}
     	
     	for (int i = 0; i < nums.length - 1; i++) {
     		if ((nums[i + 1] - nums[i]) != 1) {
