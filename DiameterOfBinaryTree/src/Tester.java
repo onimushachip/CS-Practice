@@ -26,10 +26,6 @@ public class Tester {
 		node9.right = node11;
 		
 		DiameterTree ob = new DiameterTree();
-//		ob.traverseTree(node1, 0);
-//		ob.printMaxLength();
-//		int test = ob.findLength(node1);
-//		System.out.println(test);
 		int testDia = ob.diameterOfBinaryTree(node1);
 		System.out.println("Diameter: " + testDia);
 	}

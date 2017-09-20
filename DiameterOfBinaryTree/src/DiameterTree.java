@@ -7,18 +7,12 @@
 public class DiameterTree {
 	private int maxLength = 0;
 	private int diameter = 0;
-//	int maxLengthLeft = 0;
-//	int maxLengthRight = 0;
     public int diameterOfBinaryTree(TreeNode root) {
-//    	int result = 0;
-    	
     	if (root == null) {
     		return 0;
     	}
     	
     	findDiameter(root);
-    	
-//    	result = maxLengthLeft + maxLengthRight;
     	
         return diameter;
     }
@@ -42,12 +36,9 @@ public class DiameterTree {
     		length += this.maxLength;
     	}
     	
-//    	int length = findLength(node.left) + findLength(node.right);
-    	
     	if (length > diameter) {
     		diameter = length;
     	}
-    	System.out.println("Diameter " + this.diameter + " Length " + length + " Node " + node.val);
     	
     	findDiameter(node.left);
     	findDiameter(node.right);
@@ -65,28 +56,6 @@ public class DiameterTree {
     		this.maxLength = length;
     	}
     }
-    
-//    public int findLength(TreeNode node) {
-//    	int length = 0;
-//    	
-//    	if (node == null) {
-//    		return 0;
-//    	}
-//    	
-//    	if (node.left != null) {
-//    		this.maxLength = 0;
-//    		traverseTree(node.left, 1);
-//    		length += this.maxLength;
-//    	}
-//    	
-//    	if (node.right != null) {
-//    		this.maxLength = 0;
-//    		traverseTree(node.right, 1);
-//    		length += this.maxLength;
-//    	}
-//    	
-//    	return length;
-//    }
     
     public void printMaxLength() {
     	System.out.println(maxLength);
