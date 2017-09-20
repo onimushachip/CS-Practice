@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 
 /*
@@ -19,15 +17,6 @@ public class Permutation {
     	
     	findPermutation(population.length);
     	
-//		for (int i = 0; i < result.size(); i++) {
-//			System.out.println(Arrays.asList(result.get(i)));
-//		}
-    	
-//    	permutation.add(1);
-//    	result.add(permutation);
-//    	permutation.add(2);
-//    	result.add(permutation);
-    	
     	return result;
     }
     
@@ -36,15 +25,10 @@ public class Permutation {
     		for (int i = 0; i < population.length; i++) {
     			if (helper[i] == false) {
     				permutation.add(population[i]);
-//       				System.out.println(Arrays.asList(permutation) + " " + Arrays.toString(helper));
     				result.add(new ArrayList<Integer>(permutation));
     				permutation.remove(permutation.size() - 1);
  
     			}
-//    			if (i == population.length - 1) {
-//    				System.out.println("clear");
-//    				permutation.clear();
-//    			}
     		}
     	}
     	else {
