@@ -5,51 +5,90 @@
  * 
  */
 public class DiameterTree {
-//	private int maxLength = 0;
-	int maxLengthLeft = 0;
-	int maxLengthRight = 0;
+	private int maxLength = 0;
+	private int diameter = 0;
+//	int maxLengthLeft = 0;
+//	int maxLengthRight = 0;
     public int diameterOfBinaryTree(TreeNode root) {
-    	int result = 0;
+//    	int result = 0;
     	
     	if (root == null) {
     		return 0;
     	}
     	
-    	traverseTreeLeft(root.left, 0);
-    	traverseTreeRight(root.right, 0);
+    	findDiameter(root);
     	
-    	result = maxLengthLeft + maxLengthRight;
+//    	result = maxLengthLeft + maxLengthRight;
     	
-        return result;
+        return diameter;
     }
     
-    private void traverseTreeLeft (TreeNode node, int maxLength) {
+    public void findDiameter(TreeNode node) {
     	if (node == null) {
     		return;
     	}
     	
-    	maxLength++;
+    	int length = 0;
     	
-    	if (maxLength > maxLengthLeft) {
-    		maxLengthLeft = maxLength;
+    	if (node.left != null) {
+    		this.maxLength = 0;
+    		traverseTree(node.left, 1);
+    		length += this.maxLength;
     	}
     	
-    	traverseTreeLeft(node.left, maxLength);
-    	traverseTreeLeft(node.right, maxLength);
+    	if (node.right != null) {
+    		this.maxLength = 0;
+    		traverseTree(node.right, 1);
+    		length += this.maxLength;
+    	}
+    	
+//    	int length = findLength(node.left) + findLength(node.right);
+    	
+    	if (length > diameter) {
+    		diameter = length;
+    	}
+    	System.out.println("Diameter " + this.diameter + " Length " + length + " Node " + node.val);
+    	
+    	findDiameter(node.left);
+    	findDiameter(node.right);
     }
     
-    private void traverseTreeRight (TreeNode node, int maxLength) {
+    public void traverseTree(TreeNode node, int length) {
     	if (node == null) {
     		return;
     	}
     	
-    	maxLength++;
+    	traverseTree(node.left, length + 1);
+    	traverseTree(node.right, length + 1);
     	
-    	if (maxLength > maxLengthRight) {
-    		maxLengthRight = maxLength;
+    	if (length > this.maxLength) {
+    		this.maxLength = length;
     	}
-    	
-    	traverseTreeRight(node.left, maxLength);
-    	traverseTreeRight(node.right, maxLength);
+    }
+    
+//    public int findLength(TreeNode node) {
+//    	int length = 0;
+//    	
+//    	if (node == null) {
+//    		return 0;
+//    	}
+//    	
+//    	if (node.left != null) {
+//    		this.maxLength = 0;
+//    		traverseTree(node.left, 1);
+//    		length += this.maxLength;
+//    	}
+//    	
+//    	if (node.right != null) {
+//    		this.maxLength = 0;
+//    		traverseTree(node.right, 1);
+//    		length += this.maxLength;
+//    	}
+//    	
+//    	return length;
+//    }
+    
+    public void printMaxLength() {
+    	System.out.println(maxLength);
     }
 }
