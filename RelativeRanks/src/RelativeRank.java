@@ -1,11 +1,6 @@
 import java.util.Arrays;
 import java.util.HashMap;
 
-
-/* Given scores of N athletes, find their relative ranks and the people with the top three highest scores, 
- * who will be awarded medals: "Gold Medal", "Silver Medal" and "Bronze Medal".
- * 
- */
 public class RelativeRank {
     public String[] findRelativeRanks(int[] nums) {
         String[] result = new String[nums.length];
