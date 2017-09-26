@@ -14,7 +14,7 @@ public class Tester {
 		TreeNode n = null;
 		
 		MaximumBinaryTree ob = new MaximumBinaryTree();
-//		n = ob.constructMaximumBinaryTree(test);
+		n = ob.constructMaximumBinaryTree(test);
 //		ob.constructTree(null, test);
 //		System.out.println(n.val);
 //		changeNode(n);
