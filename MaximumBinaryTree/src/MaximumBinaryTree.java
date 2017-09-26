@@ -11,6 +11,7 @@ import java.util.HashMap;
 public class MaximumBinaryTree {
 	private HashMap<Integer, Integer> indexList = new HashMap<Integer, Integer>();
 	private int[] inputArray;
+//	private TreeNode result = null;
     public TreeNode constructMaximumBinaryTree(int[] nums) {
     	TreeNode result = null;
     	this.inputArray = Arrays.copyOf(nums, nums.length);
@@ -19,13 +20,15 @@ public class MaximumBinaryTree {
     		indexList.put(nums[i], i);
     	}
     	
+    	result = constructTree(result, nums);
+    	
     	return result;
     }
     
-    public void constructTree(TreeNode root, int[] valList) {
+    public TreeNode constructTree(TreeNode root, int[] valList) {
     	if (valList.length == 0) {
     		
-    		return;
+    		return null;
     	}
     	
     	int head = indexList.get(valList[0]);
@@ -33,7 +36,11 @@ public class MaximumBinaryTree {
     	int maxVal = findMaxVal(valList);
     	int maxIndex = indexList.get(maxVal);
     	
-    	System.out.println(Arrays.toString(valList));
+    	TreeNode resultNode = new TreeNode(maxVal);
+    	
+    	root = resultNode;
+    	
+    	System.out.println(Arrays.toString(valList) + " Node value " + root.val);
 //    	int leftTail = maxIndex--;
 //    	int rightHead = maxIndex++;
 //    	int[] valListLeft;
@@ -58,8 +65,10 @@ public class MaximumBinaryTree {
     	
     	System.out.println(maxVal + " Index " + maxIndex + " Left: " + Arrays.toString(valListLeft) + " Right: " + Arrays.toString(valListRight));
     	
-    	constructTree(root, valListLeft);
-    	constructTree(root, valListRight);
+    	root.left = constructTree(root.left, valListLeft);
+    	root.right = constructTree(root.right, valListRight);
+    	
+    	return resultNode;
     	
 //    	if (leftTail == 0) {
 //    		

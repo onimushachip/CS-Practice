@@ -11,11 +11,18 @@ public class Tester {
 //		testCopy = Arrays.copyOfRange(test, index, test.length);
 //		System.out.println(Arrays.toString(testCopy));
 		
-		TreeNode n = new TreeNode(1);
+		TreeNode n = null;
 		
 		MaximumBinaryTree ob = new MaximumBinaryTree();
-		ob.constructMaximumBinaryTree(test);
-		ob.constructTree(n, test);
+//		n = ob.constructMaximumBinaryTree(test);
+//		ob.constructTree(null, test);
+//		System.out.println(n.val);
+//		changeNode(n);
+//		System.out.println(n);
 	}
+	
+//	public static void changeNode(TreeNode root) {
+//		root = new TreeNode(1);
+//	}
 
 }
