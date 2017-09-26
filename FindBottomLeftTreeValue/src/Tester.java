@@ -17,8 +17,12 @@ public class Tester {
 		node3.right = node6;
 		node5.left = node7;
 		
-		BottomLeftTree ob = new BottomLeftTree();
+//		BottomLeftTree ob = new BottomLeftTree();
+//		int result = ob.findBottomLeftValue(node1);
+//		
+//		System.out.println(result);
 		
+		BottomLeftLastRow ob = new BottomLeftLastRow();
 		int result = ob.findBottomLeftValue(node1);
 		
 		System.out.println(result);

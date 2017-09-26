@@ -1,5 +1,5 @@
 /*
- * Given a binary tree, find the leftmost value in the last row of the tree.
+ * Given a binary tree, find the leftmost value of the tree.
  * 
  */
 public class BottomLeftTree {
