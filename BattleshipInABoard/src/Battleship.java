@@ -7,6 +7,7 @@
  */
 public class Battleship {
 	char[][] map = null;
+	
     public int countBattleships(char[][] board) {
     	int result = 0;
     	
@@ -25,10 +26,6 @@ public class Battleship {
     }
     
     public void detectShip(int x, int y) {
-//    	if (map[x][y] == '.') {
-//    		return;
-//    	}
-    	
     	try { //Up
     		if (map[x - 1][y] == 'X') {
     			map[x - 1][y] = '.';
