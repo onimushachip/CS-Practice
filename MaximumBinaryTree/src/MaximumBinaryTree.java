@@ -10,8 +10,10 @@ import java.util.HashMap;
  */
 public class MaximumBinaryTree {
 	private HashMap<Integer, Integer> indexList = new HashMap<Integer, Integer>();
+	private int[] inputArray;
     public TreeNode constructMaximumBinaryTree(int[] nums) {
     	TreeNode result = null;
+    	this.inputArray = Arrays.copyOf(nums, nums.length);
         
     	for (int i = 0; i < nums.length; i++) {
     		indexList.put(nums[i], i);
@@ -20,13 +22,44 @@ public class MaximumBinaryTree {
     	return result;
     }
     
-    private void contructTree(TreeNode root, int[] valList) {
+    public void constructTree(TreeNode root, int[] valList) {
+    	if (valList.length == 0) {
+    		
+    		return;
+    	}
+    	
+    	int head = indexList.get(valList[0]);
+    	int tail = indexList.get(valList[valList.length - 1]);
     	int maxVal = findMaxVal(valList);
     	int maxIndex = indexList.get(maxVal);
+    	
+    	System.out.println(Arrays.toString(valList));
 //    	int leftTail = maxIndex--;
 //    	int rightHead = maxIndex++;
-    	int[] valListLeft = Arrays.copyOfRange(valList, 0, maxIndex);
-    	int[] valListRight = Arrays.copyOfRange(valList, maxVal, valList.length - 1);
+//    	int[] valListLeft;
+//    	int[] valListRight;
+    	
+    	int[] valListLeft = Arrays.copyOfRange(inputArray, head, maxIndex);
+    	int[] valListRight = Arrays.copyOfRange(inputArray, maxIndex + 1, tail + 1);
+    	
+//    	if (maxIndex + 1 > valList.length - 1) {
+//    		valListRight = new int[0];
+//    	}
+//    	else {
+//    		valListRight = Arrays.copyOfRange(inputArray, maxIndex + 1, tail + 1);
+//    	}
+//    	
+//    	if (maxIndex == 1 && valList.length == 1) {
+//    		valListLeft = new int[0];
+//    	}
+//    	else {
+//    		valListLeft = Arrays.copyOfRange(inputArray, head, maxIndex);
+//    	}
+    	
+    	System.out.println(maxVal + " Index " + maxIndex + " Left: " + Arrays.toString(valListLeft) + " Right: " + Arrays.toString(valListRight));
+    	
+    	constructTree(root, valListLeft);
+    	constructTree(root, valListRight);
     	
 //    	if (leftTail == 0) {
 //    		
@@ -45,8 +78,9 @@ public class MaximumBinaryTree {
     }
     
     private int findMaxVal(int[] nums) {
-    	Arrays.sort(nums);
+    	int[] input = Arrays.copyOf(nums, nums.length);
+    	Arrays.sort(input);
     	
-    	return nums[nums.length - 1];
+    	return input[input.length - 1];
     }
 }
