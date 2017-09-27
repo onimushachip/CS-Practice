@@ -25,7 +25,60 @@ public class QueueReconstruction {
     	
     	addFirstPerson();
     	
+    	addRemainingPeople();
+    	
+//    	System.out.println(checkPerson(people[1]));
+    	
     	return result;
+    }
+    
+    private void addRemainingPeople() {
+    	int height = 0;
+    	int peopleInTheFront = 0;
+    	
+//    	System.out.println(remainItem.size());
+    	
+    	while (remainItem.isEmpty() == false) {
+    		for (int i = 0; i < remainItem.size(); i++) {
+    			height = remainItem.get(i)[0];
+    			
+//    	    	System.out.println(remainItem.size());
+    			
+//    			System.out.println(checkPerson(remainItem.get(i)));
+    			
+    			if (checkPerson(remainItem.get(i)) == true) {
+    				if (itemInQueue.containsKey(height)) {
+    					itemInQueue.put(height, itemInQueue.get(height) + 1);
+    				}
+    				else {
+    					itemInQueue.put(height, 1);
+    				}
+    				
+    				constructedQ.add(Arrays.copyOf(remainItem.get(i), remainItem.get(i).length));
+    				
+    				remainItem.remove(i);
+    				
+    				break;
+    			}
+    		}
+    	}
+    }
+    
+    private boolean checkPerson(int[] person) {
+    	int tallerPeopleInfront = 0;
+    	int height = person[0];
+    	
+    	for (Integer key : itemInQueue.keySet()) {
+    		if (height <= key) {
+    			tallerPeopleInfront += itemInQueue.get(key);
+    		}
+    	}
+    	
+    	if (tallerPeopleInfront != person[1]) {
+    		return false;
+    	}
+    	
+    	return true;
     }
     
     private void addFirstPerson() {
@@ -61,7 +114,7 @@ public class QueueReconstruction {
     	
     	this.itemInQueue.put(candidates.get(minIndex)[0], 1);
     	
-    	this.result[0] = Arrays.copyOf(constructedQ.get(0), constructedQ.get(0).length);
+//    	this.result[0] = Arrays.copyOf(constructedQ.get(0), constructedQ.get(0).length);
     }
 
 }
