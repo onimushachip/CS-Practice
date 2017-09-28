@@ -12,11 +12,15 @@ public class Tester {
 				{5, 2}
 		};
 		
-		QueueReconstruction ob = new QueueReconstruction();
+//		QueueReconstruction ob = new QueueReconstruction();
+//		
+//		testInput = ob.reconstructQueue(testInput);
+//		
+//		System.out.println(Arrays.toString(testInput[0]));
+		
+		QueueReconstructionSum ob = new QueueReconstructionSum();
 		
 		testInput = ob.reconstructQueue(testInput);
-		
-		System.out.println(Arrays.toString(testInput[0]));
 	}
 
 }
