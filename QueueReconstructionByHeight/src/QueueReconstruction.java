@@ -133,6 +133,7 @@ public class QueueReconstruction {
     	for (int i = 0; i < remainQ.size(); i++) {
     		if (remainQ.get(i)[1] == 0) {
     			candidates.add(remainQ.get(i));
+    			
     			candidateIndex.add(i);
     		}
     	}
@@ -143,6 +144,7 @@ public class QueueReconstruction {
     	for (int i = 0; i < candidates.size(); i++) {
     		if (candidates.get(i)[0] < minHeight) {
     			minHeight = candidates.get(i)[0];
+    			
     			minIndex = i;
     		}
     	}
