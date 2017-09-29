@@ -10,9 +10,9 @@ import java.util.HashMap;
  */
 public class QueueReconstruction {
 	private int[][] result = null;
-	private ArrayList<int[]> remainItem = new ArrayList<int[]>();
+	private ArrayList<int[]> remainQ = new ArrayList<int[]>();
 	private HashMap<Integer, Integer> itemInQueue = new HashMap<Integer, Integer>();
-	private ArrayList<int[]> constructedQ = new ArrayList<>();
+	private ArrayList<int[]> resultQ = new ArrayList<>();
 	
     public int[][] reconstructQueue(int[][] people) {
     	result = new int[people.length][];
@@ -22,7 +22,7 @@ public class QueueReconstruction {
     	addRemainingPeople();
     	
     	for (int i = 0; i < result.length; i++) {
-    		result[i] = constructedQ.get(i);
+    		result[i] = resultQ.get(i);
     	}
     	
     	return result;
@@ -37,27 +37,27 @@ public class QueueReconstruction {
     	}
     	
     	while (!peopleList.isEmpty()) {
-        	int minSum = Integer.MAX_VALUE;
+        	int tallerPeopleMin = Integer.MAX_VALUE;
         	int heightCandidate = Integer.MAX_VALUE;
         	int candidateIndex = 0;
         	
     		for (int i = 0; i < peopleList.size(); i ++) {
-    			int sum = peopleList.get(i)[0] + peopleList.get(i)[1];
+    			int tallerPeople = peopleList.get(i)[1]; 
     			int height = peopleList.get(i)[0];
-    			if (sum <= minSum) {
-    				if (sum == minSum) {
-        				if (height < heightCandidate) {
-        					candidateIndex = i;
-        					heightCandidate = height;
-        					minSum = sum;
-        				}
+    			
+    			if (tallerPeople <= tallerPeopleMin) {
+    				if (tallerPeople == tallerPeopleMin) {
+    					if (height < heightCandidate) {
+    						heightCandidate = height;
+    						tallerPeopleMin = tallerPeople;
+    						candidateIndex = i;
+    					}
     				}
     				else {
-    					candidateIndex = i;
     					heightCandidate = height;
-    					minSum = sum;
+    					tallerPeopleMin = tallerPeople;
+    					candidateIndex = i;
     				}
-
     			}
     		}
     		
@@ -66,33 +66,42 @@ public class QueueReconstruction {
     		peopleList.remove(candidateIndex);
     	}
     	
-    	this.remainItem = resultQ;
+    	this.remainQ = resultQ;
     }
     
     private void addRemainingPeople() {
-    	int height = 0;
-    	int peopleInTheFront = 0;
-    	
-    	while (remainItem.isEmpty() == false) {
-    		for (int i = 0; i < remainItem.size(); i++) {
-    			height = remainItem.get(i)[0];
+    	while (!remainQ.isEmpty()) {
+    		int tallerPeople = 0;
+    		int tallerPeopleNeeded = remainQ.get(0)[1];
+    		int processHeight = remainQ.get(0)[0];
+    		int candidateIndex = 0;
+    		
+    		for (int i = 0; i < resultQ.size(); i++) {
+    			int height = resultQ.get(i)[0];
     			
-    			if (checkPerson(remainItem.get(i)) == true) {
-    				if (itemInQueue.containsKey(height)) {
-    					itemInQueue.put(height, itemInQueue.get(height) + 1);
-    				}
-    				else {
-    					itemInQueue.put(height, 1);
-    				}
+    			if (height >= processHeight) {
+    				tallerPeople++;
     				
-    				constructedQ.add(Arrays.copyOf(remainItem.get(i), remainItem.get(i).length));
+    				candidateIndex = i;
     				
-    				remainItem.remove(i);
-    				
-    				break;
+    				if (tallerPeople > tallerPeopleNeeded) {
+    					break;
+    				}	
     			}
+    			
+    			candidateIndex = i;
     		}
+    		
+    		if (candidateIndex == resultQ.size() - 1 && (tallerPeople == tallerPeopleNeeded)) {
+    			resultQ.add(remainQ.get(0));
+    		}
+    		else {
+    			resultQ.add(candidateIndex, remainQ.get(0));
+    		}
+    		
+    		remainQ.remove(0);
     	}
+    	
     }
     
     private boolean checkPerson(int[] person) {
@@ -116,9 +125,9 @@ public class QueueReconstruction {
     	ArrayList<int[]> candidates = new ArrayList<int[]>();
     	ArrayList<Integer> candidateIndex = new ArrayList<Integer>();
     	
-    	for (int i = 0; i < remainItem.size(); i++) {
-    		if (remainItem.get(i)[1] == 0) {
-    			candidates.add(remainItem.get(i));
+    	for (int i = 0; i < remainQ.size(); i++) {
+    		if (remainQ.get(i)[1] == 0) {
+    			candidates.add(remainQ.get(i));
     			candidateIndex.add(i);
     		}
     	}
@@ -133,11 +142,11 @@ public class QueueReconstruction {
     		}
     	}
     	
-    	this.constructedQ.add(Arrays.copyOf(candidates.get(minIndex), candidates.get(minIndex).length));
+    	this.resultQ.add(Arrays.copyOf(candidates.get(minIndex), candidates.get(minIndex).length));
     	
     	int indexOftheFirstPerson = candidateIndex.get(minIndex);
     	
-    	this.remainItem.remove(indexOftheFirstPerson);
+    	this.remainQ.remove(indexOftheFirstPerson);
     	
     	this.itemInQueue.put(candidates.get(minIndex)[0], 1);
     }
