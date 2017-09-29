@@ -49,13 +49,18 @@ public class QueueReconstruction {
     				if (tallerPeople == tallerPeopleMin) {
     					if (height < heightCandidate) {
     						heightCandidate = height;
+    						
     						tallerPeopleMin = tallerPeople;
+    						
     						candidateIndex = i;
     					}
+    					
     				}
     				else {
     					heightCandidate = height;
+    					
     					tallerPeopleMin = tallerPeople;
+    					
     					candidateIndex = i;
     				}
     			}
@@ -78,7 +83,7 @@ public class QueueReconstruction {
     		
     		for (int i = 0; i < resultQ.size(); i++) {
     			int height = resultQ.get(i)[0];
-    			
+    		
     			if (height >= processHeight) {
     				tallerPeople++;
     				
