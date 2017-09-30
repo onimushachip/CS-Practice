@@ -27,7 +27,6 @@ public class BeautifulArrangement {
     
     private void findArrangement(int layer, int index) {
     	if (layer == 0) {
-//    		System.out.println(Arrays.toString(arrangement));
     		return;
     	}
     	
@@ -35,7 +34,6 @@ public class BeautifulArrangement {
     	
     	
     	for (int i = 0; i < listSize; i++) {
-//    		System.out.print(givenNumbers.get(i) + " ");
     		if ((index % givenNumbers.get(i) == 0) || (givenNumbers.get(i) % index == 0)) {
     			int checkedNumber = givenNumbers.get(i);
     			
@@ -45,19 +43,13 @@ public class BeautifulArrangement {
     			
     			if (layer == 1) {
     				this.result++;
-    				System.out.println(Arrays.toString(arrangement) + "check");
-//    				System.out.print("bingo ");
-//    				System.out.print("\n");
+    				System.out.println(Arrays.toString(arrangement));
     			}
     			
     			findArrangement(layer - 1, index + 1);
     			
     			givenNumbers.add(i, checkedNumber);
     		}
-//    		else {
-////    			System.out.print("\n");
-//    			return;
-//    		}
     	}
     }
 }
