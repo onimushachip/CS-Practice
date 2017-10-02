@@ -13,15 +13,12 @@ public class ArithmeticSlice {
     public int numberOfArithmeticSlices(int[] A) {
         int result = 0;
         int[] givenNumbers = A;
-//        boolean slice = false;
         int sliceLength = 1;
         
         for (int i = 0; i < A.length - 1; i++) {
         	int difference = givenNumbers[i] - givenNumbers[i + 1];
         	
         	sliceLength = 1;
-        	
-//        	slice = false;
         	
         	for (int j = i; j < A.length - 1; j++) {
         		if (givenNumbers[j] - givenNumbers[j + 1] == difference) {
