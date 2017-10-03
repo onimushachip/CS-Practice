@@ -54,7 +54,6 @@ public class FrequentSubtreeSum {
     	
     	sum += (sumLeft + sumRight);
     	
-//    	System.out.println(sum);
     	if (sumOccurrence.containsKey(sum)) {
     		int occurrence = sumOccurrence.get(sum);
     		
