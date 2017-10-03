@@ -4,26 +4,26 @@ import java.util.Arrays;
 public class Tester {
 
 	public static void main(String[] args) {
-//		String test = "root/a  1.txt(abcd) 2.txt(efgh)";
-//
-//		String[] result = test.split("\\s+");
-//		
-//		System.out.println(test);
-//		
-//		System.out.println(Arrays.toString(result));
-//		
-//		ArrayList<String> contentList = new ArrayList<>();
-//		
-//		for (int i = 1; i < result.length; i++) {
-//			String content;
-//			int indexContent = result[i].indexOf('(');
-//			
-//			content = result[i].substring(indexContent);
-//			
-//			contentList.add(content);
-//		}
-//		
-//		System.out.println(Arrays.asList(contentList));
+		String testRegex = "root/a  1.txt(abcd) 2.txt(efgh)";
+
+		String[] result = testRegex.split("\\s+");
+		
+		System.out.println(testRegex);
+		
+		System.out.println(Arrays.toString(result));
+		
+		ArrayList<String> contentList = new ArrayList<>();
+		
+		for (int i = 1; i < result.length; i++) {
+			String content;
+			int indexContent = result[i].indexOf('(');
+			
+			content = result[i].substring(indexContent);
+			
+			contentList.add(content);
+		}
+		
+		System.out.println(Arrays.asList(contentList));
 		
 		String[] test = new String[4];
 		
