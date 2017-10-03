@@ -23,7 +23,6 @@ public class FindDuplicate {
 	private HashMap<String, Set<String>> fileMap = new HashMap<>();
 	
     public List<List<String>> findDuplicate(String[] paths) {
-    	
     	for (int i = 0; i < paths.length; i++) {
     		String[] fileList = paths[i].split("\\s+");
     		
