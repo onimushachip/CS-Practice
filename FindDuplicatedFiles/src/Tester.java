@@ -35,7 +35,6 @@ public class Tester {
 		FindDuplicate ob = new FindDuplicate();
 		
 		ob.findDuplicate(test);
-		
 	}
 
 }

@@ -19,7 +19,6 @@ import java.util.Set;
  */
 
 public class FindDuplicate {
-//	private List<String> duplicate = new ArrayList<String>();
 	private List<List<String>> result = new ArrayList<List<String>>();
 	private HashMap<String, Set<String>> fileMap = new HashMap<>();
 	
