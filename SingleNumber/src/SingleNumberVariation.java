@@ -29,6 +29,7 @@ public class SingleNumberVariation {
         
         for (Integer number : occurrence) {
         	result[resultIndex] = number;
+        	
         	resultIndex++;
         }
         
