@@ -31,10 +31,9 @@ public class Battleship {
     			map[x - 1][y] = '.';
     			detectShip(x - 1, y);
     		}
-    		
     	}
     	catch (Exception e) {
-    		
+    		System.out.println("Upper border exceeded!");
     	}
     	
     	try { //Down
@@ -42,10 +41,9 @@ public class Battleship {
     			map[x + 1][y] = '.';
     			detectShip(x + 1, y);
     		}
-    		
     	}
     	catch (Exception e) {
-    		
+    		System.out.println("Lower border exceeded!");
     	}
     	
     	try { //Left
@@ -53,10 +51,9 @@ public class Battleship {
     			map[x][y - 1] = '.';
     			detectShip(x, y - 1);
     		}
-    		
     	}
     	catch (Exception e) {
-    		
+    		System.out.println("Left border exceeded!");
     	}
     	
     	try { //Right
@@ -64,13 +61,10 @@ public class Battleship {
     			map[x][y + 1] = '.';
     			detectShip(x, y + 1);
     		}
-    		
     	}
     	catch (Exception e) {
-    		
+    		System.out.println("Right border exceeded!");
     	}
-    	
     }
-    
     
 }
