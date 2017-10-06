@@ -32,7 +32,6 @@ public class BeautifulArrangement {
     	
     	int listSize = this.givenNumbers.size();
     	
-    	
     	for (int i = 0; i < listSize; i++) {
     		if ((index % givenNumbers.get(i) == 0) || (givenNumbers.get(i) % index == 0)) {
     			int checkedNumber = givenNumbers.get(i);
@@ -43,7 +42,6 @@ public class BeautifulArrangement {
     			
     			if (layer == 1) {
     				this.result++;
-    				System.out.println(Arrays.toString(arrangement));
     			}
     			
     			findArrangement(layer - 1, index + 1);
