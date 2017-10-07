@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class Tester {
 
@@ -8,7 +9,15 @@ public class Tester {
 		
 		test = ob.countArrangement(test);
 		
-		System.out.println("Result: " + test);
+//		System.out.println("Result: " + test);
+		
+		int test2 = 3;
+		
+		BeautifulArrangement2 ob2 = new BeautifulArrangement2();
+		
+		int[] result = ob2.constructArray(5, 4);
+		
+		System.out.println(Arrays.toString(result));
 	}
 
 }
