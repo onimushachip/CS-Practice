@@ -40,7 +40,7 @@ public class BeautifulArrangement2 {
     		givenNumbers.remove(0);
     		
     		this.permutation[permuIndex] = checkedNumber;
-//    		System.out.println(Arrays.toString(permutation));
+    		
     		if (checkArrangement(this.permutation, distinct)) {
     			this.result = Arrays.copyOf(this.permutation, this.permutation.length);
     		}
