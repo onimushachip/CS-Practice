@@ -7,7 +7,9 @@ public class ConvertTree {
 	private int[] nodeValueArray;
     public TreeNode convertBST(TreeNode root) {
     	int nodeValueIndex = 0;
+    	
     	addTree(root);
+    	
     	nodeValueArray = new int[nodeList.size()];
     	
     	for (Integer nodeValue : nodeList.keySet()) {
