@@ -47,16 +47,11 @@ public class SortCharacter {
     	for (int i = freqList.length - 1; i >= 0; i--) {
     		if (freqList[i] != null) {
     			for (int k = 0; k < freqList[i].size(); k++) {
-//    				int destinationIndex = resultIndex + i;
-//    				int startIndex = resultIndex;
-    				
         			for (int j = 0; j < i; j++) {
         				result[resultIndex] = freqList[i].get(k);
-//        				System.out.println(freqList[i].get(k));
+
         				resultIndex++;
         			}
-        			
-//        			resultIndex = destinationIndex + 1;
     			}
     		}
     	}
