@@ -12,6 +12,7 @@ public class ConvertTree {
     	
     	for (Integer nodeValue : nodeList.keySet()) {
     		nodeValueArray[nodeValueIndex] = nodeValue;
+    		
     		nodeValueIndex++;
     	}
     	
@@ -19,16 +20,15 @@ public class ConvertTree {
     	
     	for (Integer nodeValue : nodeList.keySet()) {
     		nodeValueIndex = nodeValueArray.length - 1;
+    		
     		while (nodeValueArray[nodeValueIndex] > nodeValue) {
     			nodeList.put(nodeValue, nodeList.get(nodeValue) + nodeValueArray[nodeValueIndex]);
+    			
     			nodeValueIndex--;
     		}
     	}
     	
     	convert(root);
-    	
-    	System.out.println(Arrays.toString(nodeValueArray));
-    	System.out.println(Arrays.asList(nodeList));
         
     	return root;
     }
@@ -41,6 +41,7 @@ public class ConvertTree {
     	nodeList.put(root.val, root.val);
     	
 		addTree(root.left);
+		
 		addTree(root.right);
     }
     
@@ -52,6 +53,7 @@ public class ConvertTree {
     	root.val = nodeList.get(root.val);
     	
     	convert(root.left);
+    	
     	convert(root.right);
     }
 }
