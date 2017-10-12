@@ -62,7 +62,7 @@ public class PrintBinaryTree {
         	List<String> outputLevel = new ArrayList<>();
         	
         	for (int j = 0; j < levelList.peek().size(); j++) { //Concatenate one tree level
-        		for (int left = 0; left < emptyNodes; left++) {
+        		for (int k = 0; k < emptyNodes; k++) {
         			levelList.peek().get(j).add(0, "");
         			
         			levelList.peek().get(j).add("");
@@ -70,7 +70,7 @@ public class PrintBinaryTree {
         		
         		outputLevel.addAll(levelList.peek().get(j));
         		
-        		if (j != levelList.size() - 1) {
+        		if (j != (levelList.peek().size() - 1)) {
         			outputLevel.add("");
         		}
         	}
