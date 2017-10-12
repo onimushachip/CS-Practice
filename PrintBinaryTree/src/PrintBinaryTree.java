@@ -8,6 +8,7 @@ public class PrintBinaryTree {
     public List<List<String>> printTree(TreeNode root) {
         Queue<TreeNode> treeLevel = new LinkedList<TreeNode>();
         Stack<List<List<String>>> levelList = new Stack<>();
+        List<List<String>> result = new ArrayList<>();
     	
         treeLevel.add(root);
         
@@ -54,6 +55,33 @@ public class PrintBinaryTree {
     		}
         }
         
-    	return null;
+        int numberOfLevels = levelList.size();
+        int emptyNodes = 0;
+        
+        for (int i = 0; i < numberOfLevels; i++) {
+        	List<String> outputLevel = new ArrayList<>();
+        	
+        	for (int j = 0; j < levelList.peek().size(); j++) { //Concatenate one tree level
+        		for (int left = 0; left < emptyNodes; left++) {
+        			levelList.peek().get(j).add(0, "");
+        			
+        			levelList.peek().get(j).add("");
+        		}
+        		
+        		outputLevel.addAll(levelList.peek().get(j));
+        		
+        		if (j != levelList.size() - 1) {
+        			outputLevel.add("");
+        		}
+        	}
+        	
+        	result.add(0, outputLevel);
+        	
+        	levelList.pop();
+        	
+        	emptyNodes = (emptyNodes + 1) * 2 - 1;
+        }
+        
+    	return result;
     }
 }

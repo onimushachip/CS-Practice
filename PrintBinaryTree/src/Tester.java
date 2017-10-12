@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class Tester {
 
@@ -15,8 +17,7 @@ public class Tester {
 		
 		PrintBinaryTree ob = new PrintBinaryTree();
 		
-		ob.printTree(node1);
-
+		List<List<String>> result = ob.printTree(node1);
 	}
 
 }
