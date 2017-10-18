@@ -19,7 +19,7 @@ public class FriendCircle {
     	for (int friend = 0; friend < M.length; friend++) {
     		Set<Integer> friendGroup = new HashSet<Integer>();
     		boolean isNewGroup = true;
-    		int groupIndex = 0;
+    		int groupIndex = -1;
     		
 //    		for (int i = 0; i < groupList.size(); i++) {
 //    			if (groupList.get(i).contains(friend)) {
@@ -78,27 +78,32 @@ public class FriendCircle {
     		
     		for (Integer newFriend : friendGroup) {
     			for (int i = 0; i < groupList.size(); i++) {
-    				if (groupList.get(i).contains(newFriend)) {
-    					if (isNewGroup == true) {
-        					isNewGroup = false;
-        					
-        					groupList.get(i).addAll(friendGroup);
-        					
-        					friendGroup = groupList.get(i);
-        					
-        					groupIndex = i;
-    					}
-    					else {
-    						groupList.get(i).addAll(friendGroup);
-    						
-    						friendGroup = groupList.get(i);
-    						
-    						if (groupList.size() > 1) {
-    							groupList.remove(groupIndex);
-    						}
-    						
-    						groupIndex = i;
-    					}
+    				if (i != groupIndex) {
+    					if (groupList.get(i).contains(newFriend)) {
+        					if (isNewGroup == true) {
+            					isNewGroup = false;
+            					
+            					groupList.get(i).addAll(friendGroup);
+            					
+            					friendGroup = groupList.get(i);
+            					
+            					groupIndex = i;
+        					}
+        					else {
+        						groupList.get(i).addAll(friendGroup);
+        						
+        						friendGroup = groupList.get(i);
+        						
+        						groupList.remove(groupIndex);
+        						
+        						if (i > groupIndex) {
+        							groupIndex = i - 1;
+        						}
+        						else {
+        							groupIndex = i;
+        						}
+        					}
+        				}
     				}
     			}
     		}
