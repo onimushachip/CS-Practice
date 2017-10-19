@@ -9,7 +9,6 @@ public class Tester {
 		String result = ob.sortString(test);
 		
 		System.out.println(result);
-		System.out.println(test.codePointAt(0) + " " + test.codePointAt(1));
 	}
 
 }
