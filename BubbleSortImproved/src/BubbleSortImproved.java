@@ -8,6 +8,8 @@ public class BubbleSortImproved {
 		boolean isSorted = true;
 		
 		for (int i = 0; i < inputArray.length - 1; i++) {
+			isSorted = true;
+			
 			for (int j = 0; j < inputArray.length - 1 - i; j++) {
 				if (inputArray[j] > inputArray[j + 1]) {
 					int temp = inputArray[j];
