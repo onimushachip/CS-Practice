@@ -6,7 +6,7 @@ public class Tester {
 
 	public static void main(String[] args) {
 		HashMap<Integer, Integer> testMap = new HashMap<>();
-		int[] testInput = {5,3,1,1,1,3,73,1};
+		int[] testInput = {5, 5};
 		TopFrequentElement ob = new TopFrequentElement();
 		
 		testMap.put(null, 0);
