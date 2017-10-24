@@ -67,7 +67,6 @@ public class ReplaceWord {
     					
     					resultIndex++;
     				}
-//    				System.out.print(" " + transformWord(word, dictSet) + "\n");
     			}
     			else if (input.charAt(i - 1) != ' ') {
     				result[resultIndex] = input.charAt(i - 1);
