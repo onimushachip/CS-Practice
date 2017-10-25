@@ -58,8 +58,6 @@ public class ReplaceWord {
     			if (isWord) {
     				word = input.substring(wordStartIndex, i);
     				
-    				System.out.println(word);
-    				
     				word = transformWord(word, dictSet);
     				
     				for (int j = 0; j < word.length(); j++) {
