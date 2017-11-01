@@ -55,13 +55,18 @@ public class NextGreaterElement {
     	
     	while (nums1Index < nums1.length) {
     		nums2Index = nums2Position.get(nums1[nums1Index]);
+    		
     		processNumber = nums1[nums1Index];
+    		
     		nums1[nums1Index] = -1;
+    		
     		while (nums2Index < nums2.length) {
     			if (nums2[nums2Index] > processNumber) {
     				nums1[nums1Index] = nums2[nums2Index];
+    				
     				break;
     			}
+    			
     			nums2Index++;
     		}
     		
