@@ -18,9 +18,6 @@ public class NextGreaterElement {
     	int[] givenArray = nums;
     	Stack<Integer> decreaseNumberIndexes = new Stack<Integer>();
     	int[] result = new int[nums.length];
-//    	int resultIndex = 0;
-    	
-//    	decreaseNumberIndexes.add(0);
     	
     	for (int i = 0; i < givenArray.length; i++) {
     		result[i] = -1;
