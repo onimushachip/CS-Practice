@@ -27,11 +27,11 @@ public class NextGreaterElement {
     		int processNumber = givenArray[i];
     		
     		if (decreaseNumberIndexes.isEmpty()) {
-    			decreaseNumberIndexes.add(i);
+    			decreaseNumberIndexes.push(i);
     		}
     		else {
         		if (processNumber <= givenArray[decreaseNumberIndexes.peek()]) {
-        			decreaseNumberIndexes.add(i);
+        			decreaseNumberIndexes.push(i);
         		}
         		else {
         			int stackSize = decreaseNumberIndexes.size();
@@ -42,7 +42,7 @@ public class NextGreaterElement {
         				}
         			}
         			
-        			decreaseNumberIndexes.add(i);
+        			decreaseNumberIndexes.push(i);
         		}
     		}
     	}
@@ -51,7 +51,7 @@ public class NextGreaterElement {
     		int processNumber = givenArray[i];
     		
     		if (decreaseNumberIndexes.isEmpty()) {
-    			decreaseNumberIndexes.add(i);
+    			decreaseNumberIndexes.push(i);
     		}
     		else {
         		if (processNumber > givenArray[decreaseNumberIndexes.peek()]) {
