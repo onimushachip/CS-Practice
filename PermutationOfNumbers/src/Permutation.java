@@ -10,6 +10,7 @@ public class Permutation {
 	private List<Integer> permutation = new ArrayList<Integer>();
 	private int[] population;
 	private boolean[] helper;
+	
     public List<List<Integer>> permute(int[] nums) {
     	population = nums;
     	
