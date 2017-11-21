@@ -5,7 +5,7 @@ public class Tester {
 
 	public static void main(String[] args) {
 		WellFormedParentheses ob = new WellFormedParentheses();
-		List<String> result = ob.generateParenthesis(2);
+		List<String> result = ob.generateParenthesis(3);
 		
 		System.out.println(Arrays.asList(result));
 	}

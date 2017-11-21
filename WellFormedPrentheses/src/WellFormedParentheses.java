@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
@@ -60,10 +61,12 @@ public class WellFormedParentheses {
     		return;
     	}
     	
-    	for (int i = 0; i < this.tempCombination.size(); i++) {
+    	for (int i = 0; i <= this.tempCombination.size(); i++) {
     		this.tempCombination.add(i, ')');
     		
     		if (checkValid(this.tempCombination)) {
+    			System.out.println(Arrays.asList(this.tempCombination));
+    			
     			buildCombination(layer - 1);
     		}
     		
