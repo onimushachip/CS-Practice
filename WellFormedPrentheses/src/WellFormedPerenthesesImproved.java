@@ -6,7 +6,6 @@ public class WellFormedPerenthesesImproved {
 	StringBuilder tempCombination = new StringBuilder();
 	
 	public List<String> generateParenthesis(int n) {
-		
 		buildCombination(tempCombination, 0, 0, n);
 		
 		return result;

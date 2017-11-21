@@ -51,8 +51,6 @@ public class WellFormedParentheses {
 					String resultString = resultCombination.toString();
 					
 					this.resultSet.add(resultString);
-					
-//					System.out.println(resultString);
     			}
     			
     			this.tempCombination.remove(i);
@@ -65,8 +63,6 @@ public class WellFormedParentheses {
     		this.tempCombination.add(i, ')');
     		
     		if (checkValid(this.tempCombination)) {
-//    			System.out.println(Arrays.asList(this.tempCombination));
-    			
     			buildCombination(layer - 1);
     		}
     		
