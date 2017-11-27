@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
@@ -36,7 +35,7 @@ public class WellFormedParentheses {
     	return resultList;
     }
     
-    public void buildCombination(int layer) {
+    private void buildCombination(int layer) {
     	if (layer == 1) {
     		for (int i = 0; i <= this.tempCombination.size(); i++) {
     			this.tempCombination.add(i, ')');
@@ -70,7 +69,7 @@ public class WellFormedParentheses {
     	}
     }
     
-    public boolean checkValid(ArrayList<Character> input) {
+    private boolean checkValid(ArrayList<Character> input) {
     	int currentSlot = 0;
     	
     	for (int i = 0; i < input.size(); i++) {
