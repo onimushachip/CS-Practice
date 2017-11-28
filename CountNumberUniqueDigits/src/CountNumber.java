@@ -24,6 +24,36 @@ public class CountNumber {
     	return result;
     }
     
+    public int countNumberWithUniqueDigitsFast(int n) {
+    	int limit = n;
+    	int result = 1;
+    	int resultStack = 0;
+    	
+    	if (n > 10) {
+    		limit = 10;
+    	}
+    	
+    	for (int i = 1; i <= limit; i++) {
+    		if (i == 1) {
+    			result = result * 10;
+    			
+    			resultStack += result;
+    		}
+    		else if (i == 2) {
+    			result = 9 * 9;
+    			
+    			resultStack += result;
+    		}
+    		else {
+    			result = result * (12 - i);
+    			
+    			resultStack += result;
+    		}
+    	}
+    	
+    	return resultStack;
+    }
+    
     private boolean checkUnique(int input) {
     	String inputString = Integer.toString(input);
     	
