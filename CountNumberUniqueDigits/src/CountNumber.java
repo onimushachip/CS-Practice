@@ -25,6 +25,10 @@ public class CountNumber {
     }
     
     public int countNumberWithUniqueDigitsFast(int n) {
+    	if (n == 0) {
+    		return 1;
+    	}
+    	
     	int limit = n;
     	int result = 1;
     	int resultStack = 0;
@@ -45,7 +49,7 @@ public class CountNumber {
     			resultStack += result;
     		}
     		else {
-    			result = result * (12 - i);
+    			result = result * (11 - i);
     			
     			resultStack += result;
     		}
