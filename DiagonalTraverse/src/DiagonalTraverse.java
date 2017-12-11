@@ -30,10 +30,52 @@ public class DiagonalTraverse {
     	
     	while (resultList.size() < numberOfElements) {
     		if (upDirection) {
+    			if (indexRow == 0 && indexCol == matrix[0].length - 1) {
+    				upDirection = false;
+    				
+    				indexRow++;
+    			}
+    			else if (indexRow - 1 < 0) {
+    				upDirection = false;
+    				
+    				indexCol++;
+    			}
+    			else if (indexCol + 1 > matrix[0].length - 1) {
+    				upDirection = false;
+    				
+    				indexRow++;
+    			}
+    			else {
+    				indexCol++;
+    				
+    				indexRow--;
+    			}
 
+    			resultList.add(matrix[indexRow][indexCol]);
     		}
     		else {
+    			if (indexRow == matrix.length - 1 && indexCol == 0) {
+    				upDirection = true;
+    				
+    				indexCol++;
+    			}
+    			else if (indexCol - 1 < 0) {
+    				upDirection = true;
+    				
+    				indexRow++;
+    			}
+    			else if (indexRow + 1 > matrix.length - 1) {
+    				upDirection = true;
+    				
+    				indexCol++;
+    			}
+    			else {
+    				indexCol--;
+    				
+    				indexRow++;
+    			}
     			
+    			resultList.add(matrix[indexRow][indexCol]);
     		}
     		
     	}
