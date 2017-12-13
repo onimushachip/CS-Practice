@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -10,11 +9,12 @@ import java.util.List;
 
 public class CombinationSum {
 	private ArrayList<Integer> combination = new ArrayList<Integer>();
+	private List<List<Integer>> result = new ArrayList<List<Integer>>();
 	
     public List<List<Integer>> combinationSum3(int k, int n) {
     	findValidComb(1, k, n);
     	
-        return null;
+        return this.result;
     }
     
     private void findValidComb(int nextInt, int layer, int totalSum) {
@@ -30,7 +30,7 @@ public class CombinationSum {
     	
     	if (layer == 0) {
     		if (sum == totalSum) {
-    			System.out.println(Arrays.asList(combination));
+    			this.result.add(new ArrayList<Integer>(this.combination));
     		}
     	}
     	
@@ -41,7 +41,6 @@ public class CombinationSum {
     		
     		this.combination.remove(combination.size() - 1);
     	}
-    	
     }
 
 }
