@@ -32,6 +32,8 @@ public class CombinationSum {
     		if (sum == totalSum) {
     			this.result.add(new ArrayList<Integer>(this.combination));
     		}
+    		
+    		return;
     	}
     	
     	for (int i = nextInt; i <= 9; i++) {
